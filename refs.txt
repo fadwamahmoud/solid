@@ -1,0 +1,6 @@
+// all 
+https://dev.to/francescoxx/solid-principles-in-javascript-3pek
+https://medium.com/@cramirez92/s-o-l-i-d-the-first-5-priciples-of-object-oriented-design-with-javascript-790f6ac9b9fa
+
+// liskov
+https://duncan-mcardle.medium.com/solid-principle-3-liskov-substitution-javascript-fdb6af8ee1ea
