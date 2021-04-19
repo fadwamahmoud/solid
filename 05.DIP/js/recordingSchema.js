@@ -12,3 +12,6 @@ RecordingSchema.methods.persist = function (storage, data) {
 };
 
 module.exports = mongoose.model("Recording", RecordingSchema);
+
+// recording depends on s3Client
+// both depend on an abstraction

@@ -16,16 +16,19 @@ RecordingSchema.methods.getUrl = () => {
     Key: this.filePath,
   });
 };
-RecordingSchema.methods.persist = (data, isForBack) => {
+
+// user => upload => create a backup myBackup bucketName
+// filename => postfixed (backup)
+RecordingSchema.methods.persist = (data, isForBackup) => {
   s3Client.putObject({
-    Bucket: isForBack ? "myBackup" : "myBucket",
-    Key: this.filePath,
+    Bucket: isForBackup ? "myBackup" : "myBucket",
+    Key: isForBackup ? `${this.filePath}(backup)` : this.filePath,
     Body: data,
   });
 };
 
-// user => upload => create a backup myBackup bucketName
-// filename => postfixed (backup)
+// high level depends on low level => both depend on abstraction
+// operations => getsignedurl from storage , put file to storage
 
 RecordingSchema.methods.persistBackup = function (data) {
   return s3Client.putObject({
